@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hapi/hapi": "^20.0.0",
     "@hapi/inert": "^6.0.4",
     "@hapi/vision": "^6.1.0",
     "confidence": "3.x.x",
@@ -11,16 +12,16 @@
     "good-console": "^7.1.0",
     "good-squeeze": "^5.1.0",
     "hapi": "17.5.3",
-    "hapi-swagger": "^14.2.4",
+    "hapi-swagger": "14.2.4",
     "hoek": "5.0.4",
     "inert": "^5.1.0",
+    "joi": "17.x",
     "lout": "^11.1.0",
     "pug": "^2.0.3",
     "vision": "5.4.0"
   },
   "devDependencies": {
     "code": "5.2.0",
-    "lab": "16.0.0",
     "nodemon": "1.18.3"
   },
   "scripts": {
@@ -28,12 +29,6 @@
     "start": "nodemon server.js -e js,pug",
     "test": "lab -c -L -C -l -v --threshold 95 --assert code",
     "test-cover": "lab -c -L --assert code -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
