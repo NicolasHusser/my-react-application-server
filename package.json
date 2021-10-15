@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hapi/inert": "^6.0.4",
+    "@hapi/vision": "^6.1.0",
     "confidence": "3.x.x",
     "glue": "5.0.0",
     "good": "^8.1.1",
