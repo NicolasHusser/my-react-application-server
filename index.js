@@ -1,12 +1,27 @@
+// index.js
+
 'use strict';
 
-const Glue = require('glue');
-const Manifest = require('./manifest');
+const Server = require('./server');
 
-
-const composeOptions = {
-    relativeTo: __dirname
+exports.init = async () => {
+    const server = await Server.deployment();
+    await server.initialize();
+    return server;
 };
 
 
-module.exports = Glue.compose.bind(Glue, Manifest.get('/'), composeOptions);
+async function start() {
+    let server = await Server.deployment();
+    try {
+        await server.start();
+    }
+    catch (err) {
+        console.log(err);
+        process.exit(1);
+    }
+
+    console.log('Server running at:', server.info.uri);
+};
+
+start();
